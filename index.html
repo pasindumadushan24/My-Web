@@ -15,6 +15,80 @@
             font-family: 'Roboto', sans-serif;
         }
 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #222;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        /* Hamburger icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #222;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
         body {
             background: radial-gradient(circle at top, #0a0a0a, #1a1a1a);
             color: #e0e0e0;
@@ -700,6 +774,12 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </header>
 
 <!-- HERO -->
@@ -880,5 +960,10 @@
 </footer>
 
 
+<script>
+    function toggleMenu() {
+        document.querySelector(".navbar").classList.toggle("active");
+    }
+</script>
 </body>
 </html>
