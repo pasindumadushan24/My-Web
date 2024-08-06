@@ -15,80 +15,6 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background-color: #222;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10;
-        }
-
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #00bcd4;
-        }
-
-        /* Hamburger icon */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            border-radius: 2px;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background: #222;
-                width: 100%;
-                text-align: center;
-                padding: 20px 0;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-        }
-
         body {
             background: radial-gradient(circle at top, #0a0a0a, #1a1a1a);
             color: #e0e0e0;
@@ -753,6 +679,46 @@
             }
             .projects-icons img{width:90%;}
         }
+
+
+
+        .assignment-icons {
+            display: flex;
+            gap: 20px; /* space between boxes */
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .assignment-box {
+            background-color: #1c2e4a;
+            color: white;
+            text-decoration: none;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, background-color 0.3s;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .assignment-box:hover {
+            transform: translateY(-10px) scale(1.05);
+            background-color: #3e5c8f;
+        }
+
+        .box-content p {
+            text-align: center;
+            margin: 0;
+        }
+
+
+
+
+
     </style>
 
 
@@ -774,12 +740,6 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-
-    <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
 </header>
 
 <!-- HERO -->
@@ -920,6 +880,55 @@
     </div>
 </section>
 
+
+
+
+<!--<section id="assignment">-->
+<!--    <h3>ASSIGNMENT</h3>-->
+<!--    <div class="assignment-icons">-->
+<!--        &lt;!&ndash; Example GitHub links &ndash;&gt;-->
+<!--        <a href="https://github.com/pasindumadushan24/Spare-Parts-System" target="_blank">-->
+<!--            <img src="github-icon.png" alt="Assignment 1">-->
+<!--        </a>-->
+<!--        <a href="https://github.com/pasindumadushan24/My-Web" target="_blank">-->
+<!--            <img src="github-icon.png" alt="Assignment 2">-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+
+<section id="assignment">
+    <h3>ASSIGNMENT</h3>
+    <div class="assignment-icons">
+        <!-- Assignment 1 Box -->
+        <a href="https://github.com/pasindumadushan24/Spare-Parts-System" target="_blank" class="assignment-box">
+            <div class="box-content">
+                <p>Assignment 1</p>
+            </div>
+        </a>
+
+        <!-- Assignment 2 Box -->
+        <a href="https://github.com/pasindumadushan24/ClientServerPasindu" target="_blank" class="assignment-box">
+            <div class="box-content">
+                <p>Assignment 2</p>
+            </div>
+        </a>
+
+        <!-- Assignment 3 Box -->
+        <a href="https://github.com/pasindumadushan24/My-Web" target="_blank" class="assignment-box">
+            <div class="box-content">
+                <p>Assignment 3</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+
+
+
+
+
 <!-- CONTACT SECTION -->
 <section id="contact" class="contact-section">
     <h3>CONTACT</h3>
@@ -960,10 +969,5 @@
 </footer>
 
 
-<script>
-    function toggleMenu() {
-        document.querySelector(".navbar").classList.toggle("active");
-    }
-</script>
 </body>
 </html>
