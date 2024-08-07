@@ -828,6 +828,73 @@
 
 
 
+        .education-section {
+            padding: 60px 20px;
+            background:grey;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .education-section h3.section-subtitle {
+            color: #ff6f61; /* IJSE style accent color */
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .education-section h2.section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .education-section h2 span {
+            color: #ff6f61; /* Highlight color */
+        }
+
+        /* Education cards */
+        .education-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .education-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 300px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .education-card h4 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #222;
+        }
+
+        .education-card p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .education-card span {
+            font-size: 14px;
+            color: #b80b0b;
+        }
+
+
+
     </style>
 
 
@@ -1073,6 +1140,29 @@
                 <p>Assignment 3</p>
             </div>
         </a>
+    </div>
+</section>
+
+
+<!-- Education SECTION -->
+<section id="Education" class="education-section">
+    <h3>EDUCATION</h3>
+    <div class="container">
+<!--        <h3 class="section-subtitle">EDUCATION</h3>-->
+<!--        <h2 class="section-title">WHAT ARE <span>MY EDUCATION?</span></h2>-->
+        <h4>WHAT ARE  <span>MY EDUCATION?</span></h4>
+        <div class="education-cards">
+            <div class="education-card">
+                <h4>GDSE</h4>
+                <p>IJSE - Institute of Software Engineering , Sri Lanka</p>
+                <span>2025</span>
+            </div>
+            <div class="education-card">
+                <h4>Advanced Level Education</h4>
+                <p>Sir John Kothalawala School, Piliyandala</p>
+                <span>2023 A/L</span>
+            </div>
+        </div>
     </div>
 </section>
 
