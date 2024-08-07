@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasindu Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+
 
     <style>
         * {
@@ -240,21 +244,63 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 50px;
+            gap: 30px;
             margin-top: 40px;
         }
 
-        .projects-icons img {
-            width: 300px;
-            border-radius: 10px;
-            border: 2px solid #00C6BA;
-            transition: transform 0.4s, box-shadow 0.4s;
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px; /* compact width */
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #00C6BA;
+            background-color: #fdfdfd;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .projects-icons img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 198, 186, 0.7);
+        .project-card h4 {
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
         }
+
+        .project-photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .project-photos img {
+            width: calc(50% - 4px); /* 2 images per row, small spacing */
+            border-radius: 8px;
+            border: 1px solid #00C6BA;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-photos img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 198, 186, 0.6);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 25px rgba(0, 198, 186, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .project-card {
+                width: 90%;
+            }
+            .project-photos img {
+                width: calc(50% - 5px);
+            }
+        }
+
 
         /* SERVICE */
         .service-cards {
@@ -408,64 +454,80 @@
 
 
 
+            /* ==== ABOUT SECTION ==== */
             .about-section {
                 background: linear-gradient(180deg, #0a0a0a, #141414);
                 padding: 100px 80px;
-                text-align: center;
             }
 
             .about-section h2 {
                 font-size: 40px;
-                color: #fff;
-                margin-bottom: 50px;
-                font-family: 'Poppins', sans-serif;
+                text-align: center;
+                color: #00c6b5;
+                margin-bottom: 60px;
+                letter-spacing: 1px;
             }
 
             .about-container {
                 display: flex;
+                justify-content: center;
                 align-items: center;
-                justify-content: space-between;
                 gap: 60px;
                 flex-wrap: wrap;
             }
 
+            /* ==== Text Side ==== */
             .about-text {
                 flex: 1;
-                text-align: left;
-                color: #ccc;
-                line-height: 1.8;
-                font-size: 17px;
-                animation: fadeInLeft 1.2s ease;
+                min-width: 280px;
+                max-width: 500px;
+                text-align: justify;
             }
 
-            .about-text span {
-                color: #00C6BA;
-                font-weight: 600;
+            .about-text h3 {
+                font-size: 28px;
+                color: #00c6b5;
+                margin-bottom: 20px;
             }
 
+            .about-text p {
+                font-size: 16px;
+                line-height: 1.7;
+                color: #d0d0d0;
+            }
+
+            /* ==== Image Side ==== */
             .about-img {
                 flex: 1;
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 animation: fadeInRight 1.2s ease;
+                position: relative;
             }
-
             .about-img img {
-                width: 320px;
-                height: 320px;
-                border-radius: 50%;
-                border: 4px solid #00C6BA;
-                box-shadow: 0 0 40px rgba(0,198,186,0.6);
+                width: 340px;
+                height: 340px;/* height ටික වැඩි කරලා oval look එකක් */
+                border-radius: 50% / 40%; /* මෙතනින් oval shape එක */
+                border: 4px solid #00c6b5;
+                box-shadow: 0 0 40px rgba(0, 198, 186, 0.6);
+                transition: transform 0.5s ease, box-shadow 0.5s ease;
                 object-fit: cover;
-                transition: transform 0.4s ease, box-shadow 0.4s ease;
             }
 
             .about-img img:hover {
-                transform: scale(1.05);
-                box-shadow: 0 0 70px rgba(0,198,186,0.8);
+                transform: scale(1.08) rotate(2deg);
+                box-shadow: 0 0 60px rgba(0, 198, 186, 0.8);
             }
 
-            /* Responsive */
+            /* ==== Glow Animation ==== */
+            @keyframes pulseGlow {
+                0% { box-shadow: 0 0 40px rgba(0,198,186,0.6); }
+                50% { box-shadow: 0 0 70px rgba(0,198,186,0.8); }
+                100% { box-shadow: 0 0 40px rgba(0,198,186,0.6); }
+            }
+
+            /* ==== Responsive ==== */
             @media (max-width: 992px) {
                 .about-container {
                     flex-direction: column-reverse;
@@ -477,10 +539,11 @@
                 }
 
                 .about-img img {
-                    width: 260px;
-                    height: 260px;
+                    width: 20px;
+                    height: 20px;
                 }
             }
+
 
 
 
@@ -715,6 +778,52 @@
             margin: 0;
         }
 
+        .typing-text {
+            font-size: 52px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Line 1 typing */
+        .line1 {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            width: 0;
+            animation: typing1 2s steps(10, end) forwards, blink 0.5s step-end infinite;
+        }
+
+        /* Line 2 typing (after line1 finishes) */
+        .line2 {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            width: 0;
+            color: #fff;
+            animation: typing2 2s steps(15, end) forwards 1.2s, blink 0.5s step-end infinite 2.2s;
+        }
+
+        /* Typing animations */
+        @keyframes typing1 {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes typing2 {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        /* Blinking cursor */
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+
+
+
 
 
 
@@ -743,13 +852,22 @@
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero">
+<section id="home" class="hero"    data-aos="fade-up">
     <div class="intro">
-        <h1>Hello I’m <span>Pasindu Madushan</span></h1>
+<!--        <h1>Hello I’m <span>Pasindu Madushan</span></h1>-->
+        <h1 class="typing-text">
+            <span class="line1">Hello I’m</span><br>
+            <span class="line2">Pasindu Madushan</span>
+        </h1>
+
+
         <p>
-            I am a Software Engineering student who loves building websites and modern web applications.
-            My focus is on creating user-friendly designs and improving user experiences. Currently, I’m enhancing my skills to build creative and efficient solutions.
+            I am a passionate Software Engineering student with a strong interest in building websites and modern web applications. I enjoy creating
+            interactive and responsive designs that provide smooth and engaging user experiences. My focus is on developing user-friendly interfaces, optimizing performance, and ensuring accessibility for all users.
+            I am constantly learning new technologies and best practices to enhance the quality and efficiency of my work.
         </p>
+
+
         <div class="social-links">
             <a href="https://www.facebook.com/share/1GREPnnNCG/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/__pasindu_madushan__?igsh=MWx5N3ZpYW02czRsaQ%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -759,7 +877,7 @@
 
     </div>
     <div class="profile-img">
-        <img src="assets/images/5b81c6b0-46b2-4620-b78f-d183971e47de.jpg" alt="Profile">
+        <img src="assets/images/19e2a592-31ec-4408-8f6d-e370a2f5e209.jpg" alt="Profile">
     </div>
 </section>
 
@@ -768,6 +886,8 @@
 <!-- ABOUT ME -->
 <section id="about" class="about-section">
     <h2>About <span>Me</span></h2>
+
+
     <div class="about-container">
         <div class="about-text">
             <p>
@@ -791,9 +911,10 @@
             </p>
         </div>
 
-        <div class="about-img">
-            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Pasindu Madushan">
-        </div>
+<!--        <div class="about-img">-->
+<!--            <img src="assets/images/d6a73a3a-3294-4b3b-80ed-07f4ff406acf.jpg" alt="Pasindu Madushan">-->
+<!--        </div>-->
+
     </div>
 </section>
 
@@ -838,8 +959,7 @@
 </section>
 
 <!-- SERVICE -->
-
-<section id="service">
+<section id="service" >
     <h3>SERVICE</h3>
     <h4>WHAT <span>CAN I DO?</span></h4>
     <p>
@@ -870,13 +990,45 @@
     </div>
 </section>
 
+
+
 <!-- PROJECTS -->
 <section id="projects">
     <h3>PROJECTS</h3>
     <div class="projects-icons">
-        <img src="assets/images/Screenshot%202025-04-10%20000031.png" alt="Project 1">
-        <img src="assets/images/Screenshot%202025-04-10%20000249.png" alt="Project 2">
-        <img src="assets/images/Screenshot%202025-04-10%20001357.png" alt="Project 3">
+
+        <!-- Project 1 with 4 photos -->
+        <div class="project-card">
+            <h4>Project 1</h4>
+            <div class="project-photos">
+
+                <img src="assets/images/Screenshot%202025-04-09%20232730.png" alt="Project 1 Photo 1">
+                <img src="assets/images/Screenshot%202025-04-10%20000658.png" alt="Project 1 Photo 2">
+                <img src="assets/images/Screenshot%202025-04-10%20000031.png" alt="Project 1 Photo 3">
+                <img src="assets/images/Screenshot%202025-04-10%20001357.png" alt="Project 1 Photo 4">
+            </div>
+        </div>
+
+        <!-- Project 2 with 2 photos -->
+        <div class="project-card">
+            <h4>Project 2</h4>
+            <div class="project-photos">
+                <img src="assets/images/Screenshot%202024-08-07%20000015.png" alt="Project 1 Photo 1">
+                <img src="assets/images/Screenshot%202024-08-07%20000104.png" alt="Project 2 Photo 2">
+                <img src="assets/images/Screenshot%202024-08-07%20000129.png" alt="Project 3 Photo 3">
+                <img src="assets/images/Screenshot%202024-08-07%20000157.png" alt="Project 4 Photo 4">
+            </div>
+        </div>
+
+        <!-- Project 3 with 2 photos -->
+        <div class="project-card">
+            <h4>Project 3</h4>
+            <div class="project-photos">
+                <img src="assets/images/Screenshot%202024-07-30%20223600.png" alt="Project 2 Photo 1">
+
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -968,6 +1120,14 @@
     </div>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1200,   // Animation time (milliseconds)
+        once: true,       // එක වරක් animation play වෙනව
+        easing: 'ease-in-out', // smooth effect
+    });
+</script>
 
 </body>
 </html>
