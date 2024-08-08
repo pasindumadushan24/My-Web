@@ -879,6 +879,148 @@
 
 
 
+
+
+        /*header*/
+        /* Basic nav setup */
+        header {
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 8%;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+
+                background: rgba(0, 198, 186, 0.15);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(0, 198, 186, 0.5);
+                transition: all 0.4s ease;
+            }
+
+
+
+
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4;
+        }
+
+        /* Hamburger icon  */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Responsive menu */
+        /* menu hide by mobile */
+        @media (max-width: 768px) {
+            .navbar {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .navbar.active {
+                display: flex;
+                animation: fadeIn 0.3s ease-in-out;
+            }
+
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                z-index: 1001;
+            }
+
+            .hamburger span {
+                width: 25px;
+                height: 3px;
+                background: white;
+                border-radius: 2px;
+                transition: 0.3s;
+            }
+
+            /* Animate hamburger  active */
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translateY(8px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translateY(-8px);
+            }
+        }
+
+
+        /* Simple  animation */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(-10px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(8px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-8px);
+        }
+
+
+
+
+
+
+
+
+
+
     </style>
 
 
@@ -900,6 +1042,12 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
 </header>
 
 <!-- HERO -->
@@ -1188,6 +1336,25 @@
         once: true,
         easing: 'ease-in-out',
     });
+
+
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navbar.classList.toggle('active');
+    }
+
+    // Close menu when clicking a link (optional but clean)
+    document.querySelectorAll('.navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+
+
 </script>
 
 </body>
