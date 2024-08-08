@@ -230,12 +230,12 @@
         .skill-icons img {
             width: 90px;
             transition: transform 0.4s, filter 0.4s, box-shadow 0.4s;
-            /* Removed grayscale filter */
+
         }
 
         .skill-icons img:hover {
             transform: scale(1.2);
-            /* Add a soft glow without altering original color */
+
             filter: drop-shadow(0 0 25px #00C6BA);
         }
 
@@ -252,7 +252,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 300px; /* compact width */
+            width: 300px;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #00C6BA;
@@ -275,7 +275,7 @@
         }
 
         .project-photos img {
-            width: calc(50% - 4px); /* 2 images per row, small spacing */
+            width: calc(50% - 4px);
             border-radius: 8px;
             border: 1px solid #00C6BA;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -449,9 +449,6 @@
 
 
 
-            /* ==== ABOUT SECTION ==== */
-
-
 
 
             /* ==== ABOUT SECTION ==== */
@@ -476,7 +473,7 @@
                 flex-wrap: wrap;
             }
 
-            /* ==== Text Side ==== */
+            /* ==== Text  ==== */
             .about-text {
                 flex: 1;
                 min-width: 280px;
@@ -507,8 +504,8 @@
             }
             .about-img img {
                 width: 340px;
-                height: 340px;/* height ටික වැඩි කරලා oval look එකක් */
-                border-radius: 50% / 40%; /* මෙතනින් oval shape එක */
+                height: 340px;
+                border-radius: 50% / 40%;
                 border: 4px solid #00c6b5;
                 box-shadow: 0 0 40px rgba(0, 198, 186, 0.6);
                 transition: transform 0.5s ease, box-shadow 0.5s ease;
@@ -580,22 +577,8 @@
             box-shadow: 0 0 40px rgba(0, 198, 186, 0.7);
         }
 
-        /*.gallery-btn {*/
-        /*    margin-top: 30px;*/
-        /*    padding: 14px 30px;*/
-        /*    background: #00C6BA;*/
-        /*    border: none;*/
-        /*    border-radius: 8px;*/
-        /*    color: #000;*/
-        /*    font-weight: 600;*/
-        /*    cursor: pointer;*/
-        /*    transition: 0.3s;*/
-        /*}*/
 
-        /*.gallery-btn:hover {*/
-        /*    background: #00ffff;*/
-        /*    transform: translateY(-3px);*/
-        /*}*/
+
         @media (max-width: 768px) {
             .gallery-container img {
                 width: 45%;
@@ -747,7 +730,7 @@
 
         .assignment-icons {
             display: flex;
-            gap: 20px; /* space between boxes */
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 20px;
@@ -794,7 +777,7 @@
             animation: typing1 2s steps(10, end) forwards, blink 0.5s step-end infinite;
         }
 
-        /* Line 2 typing (after line1 finishes) */
+        /* Line 2 typing  */
         .line2 {
             display: inline-block;
             white-space: nowrap;
@@ -816,7 +799,7 @@
             to { width: 100%; }
         }
 
-        /* Blinking cursor */
+
         @keyframes blink {
             from, to { border-color: transparent; }
             50% { border-color: #fff; }
@@ -836,7 +819,7 @@
         }
 
         .education-section h3.section-subtitle {
-            color: #ff6f61; /* IJSE style accent color */
+            color: #ff6f61;
             font-size: 18px;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -850,7 +833,7 @@
         }
 
         .education-section h2 span {
-            color: #ff6f61; /* Highlight color */
+            color: #ff6f61;
         }
 
         /* Education cards */
@@ -978,9 +961,7 @@
             </p>
         </div>
 
-<!--        <div class="about-img">-->
-<!--            <img src="assets/images/d6a73a3a-3294-4b3b-80ed-07f4ff406acf.jpg" alt="Pasindu Madushan">-->
-<!--        </div>-->
+
 
     </div>
 </section>
@@ -1166,7 +1147,7 @@
     <p>If you’d like to work together or just want to say hi, feel free to drop a message below.</p>
 
     <div class="contact-form">
-        <!-- Replace yourFormIDHere with your actual Formspree ID -->
+
 
         <form action="https://formspree.io/f/mnnonedr" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
@@ -1202,9 +1183,9 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
     AOS.init({
-        duration: 1200,   // Animation time (milliseconds)
-        once: true,       //   animation play
-        easing: 'ease-in-out', // smooth effect
+        duration: 1200,
+        once: true,
+        easing: 'ease-in-out',
     });
 </script>
 
